@@ -6,7 +6,7 @@ export const ProductContainer = styled('main', {
     alignItems: 'stretch',
     gap: '4rem',
 
-    minWidth: 1180,
+    maxWidth: 1180,
     margin: '0 auto'
 })
 
@@ -32,6 +32,7 @@ export const ImageContainer = styled('div', {
 export const ProductDetails = styled('div', {
     display: 'flex',
     flexDirection: 'column',
+    minWidth: '50%',
 
     h1: {
         fontSize: '$2xl',
@@ -63,7 +64,12 @@ export const ProductDetails = styled('div', {
         fontWeight: 'bold',
         fontSize: '$md',
 
-        '&:hover': {
+        '&:disabled': {
+            opacity: 0.6,
+            cursor: 'not-allowed'
+        },
+
+        '&:not(:disabled):hover': {
             backgroundColor: '$green300',
         }
     },
